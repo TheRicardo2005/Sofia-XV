@@ -2,8 +2,10 @@
 import CardInvitation from "@/components/CardInvitation.astro";
 import Layout from "../layouts/Layout.astro";
 import Counter from "@/components/Counter.astro";
-import BannerInfor from "../../public/img/bannerInfo.webp"
 import { Image } from "astro:assets";
+import ConfirmAsistencia from "@/components/ConfirmAsistencia.astro";
+import BannerInfor from "../../public/img/bannerInfo.webp"
+import regalo from "../../public/img/regalo.webp"
 ---
 
 <Layout>
@@ -22,22 +24,6 @@ import { Image } from "astro:assets";
             <CardInvitation />
         </div>
 
-        <!-- <a
-            href="https://wa.me/573205781997?text=Hola,%20confirmo%20mi%20asistencia%20al%20evento."
-            target="_blank"
-            style="
-        display: inline-block;
-        padding: 12px 20px;
-        background-color: #25D366;
-        color: white;
-        font-size: 16px;
-        border-radius: 8px;
-        text-decoration: none;
-    "
-        >
-            Confirmar asistencia por WhatsApp
-        </a> -->
-
         <Counter />
 
         <div class="h-min-[713px] bg-[#c6a8f4] flex justify-center items-center">
@@ -45,8 +31,10 @@ import { Image } from "astro:assets";
         </div>
 
         <!-- WhatsApp -->
-        <div>
+        <ConfirmAsistencia />
 
+        <div class="h-min-[522px] bg-[#c6a8f4] flex justify-center items-center">
+            <Image src={regalo} alt="Banner de Regalos" />
         </div>
     </main>
 </Layout>
