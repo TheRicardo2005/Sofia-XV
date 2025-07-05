@@ -86,19 +86,19 @@ import Galeriainf from "@/assets/svg/Galeriainf.svg"
         });
     }
     const images = [
-        "../../public/img/Carrusel1.jpg",
-        "../../public/img/Carrusel2.jpg",
-        "../../public/img/Carrusel3.jpg",
+        "/img/Carrusel1.jpg",
+        "/img/Carrusel2.jpg",
+        "/img/Carrusel3.jpg",
     ];
 
     let currentIndex = 0;
 
-    function showImage(index: number) {
+    function showImage(index) {
         if (index < 0 || index >= images.length) return;
 
         const imgElement = document.getElementById(
-            "carousel-image",
-        ) as HTMLImageElement | null;
+            "carousel-image"
+        );
         if (!imgElement) return;
         currentIndex = index;
         if (currentIndex < 0) currentIndex = images.length - 1;
