@@ -2,6 +2,8 @@
 import CardInvitation from "@/components/CardInvitation.astro";
 import Layout from "../layouts/Layout.astro";
 import Counter from "@/components/Counter.astro";
+import BannerInfor from "../../public/img/bannerInfo.webp"
+import { Image } from "astro:assets";
 ---
 
 <Layout>
@@ -37,6 +39,15 @@ import Counter from "@/components/Counter.astro";
         </a> -->
 
         <Counter />
+
+        <div class="h-min-[713px] bg-[#c6a8f4] flex justify-center items-center">
+            <Image src={BannerInfor} alt="Banner de Información" />
+        </div>
+
+        <!-- WhatsApp -->
+        <div>
+
+        </div>
     </main>
 </Layout>
 
