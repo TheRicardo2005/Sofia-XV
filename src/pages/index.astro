@@ -1,0 +1,48 @@
+---
+import CardInvitation from "@/components/CardInvitation.astro";
+import Layout from "../layouts/Layout.astro";
+import Counter from "@/components/Counter.astro";
+import SofiaBanner from "../../public/img/SofiaXIBanner.webp"
+import { Image } from "astro:assets";
+---
+
+<Layout>
+    <main>
+        <section
+            class="flex flex-col items-center justify-center"
+            id="HeroBannerHome"
+        >
+            <Image
+                src={SofiaBanner}
+                alt="banner"
+                class="w-full h-full object-cover object-center"
+            />
+        </section>
+
+        <!-- Tarjeta principal -->
+        <div class="flex justify-center items-center m-4">
+            <CardInvitation />
+        </div>
+
+        <Counter/>
+    </main>
+</Layout>
+
+<style>
+    #HeroBannerHome {
+        /* background-image: url("../../public/img/sofia.webp"); */
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center -300px;
+        height: clamp(400px, 30vh, 500px);
+    }
+
+    @media (max-width: 768px) {
+        #HeroBannerHome {
+            background-position: center -200px;
+        }
+    }
+</style>
+
+

@@ -1,0 +1,65 @@
+---
+import "../styles/global.css";
+import Sidebar from "@/components/Sidebar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<title>XV Años de Sofía</title>
+		<meta
+			name="description"
+			content="¡Acompáñanos a celebrar los XV años de Sofía! Un día lleno de magia, familia y amigos."
+		/>
+
+		<!-- Open Graph / Facebook / WhatsApp -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://tusitio.com/" />
+		<meta property="og:title" content="XV Años de Sofía" />
+		<meta
+			property="og:description"
+			content="¡Acompáñanos a celebrar los XV años de Sofía! Un día lleno de magia, familia y amigos."
+		/>
+		<meta
+			property="og:image"
+			content="https://tusitio.com/images/sofia-xv.jpg"
+		/>
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://tusitio.com/" />
+		<meta name="twitter:title" content="XV Años de Sofía" />
+		<meta
+			name="twitter:description"
+			content="¡Acompáñanos a celebrar los XV años de Sofía! Un día inolvidable."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://tusitio.com/images/sofia-xv.jpg"
+		/>
+
+		<!-- Puedes incluir además -->
+		<meta property="og:locale" content="es_ES" />
+	</head>
+	<body>
+		<Sidebar />
+		<slot />
+		<!-- <script src="../scripts/animations.js"></script> -->
+	</body>
+</html>
+
+<style is:global>
+	html,
+	body {
+		background: #111;
+		height: 100%;
+		overflow-x: hidden;
+		overscroll-behavior: none;
+		margin: 0;
+		width: 100%;
+	}
+</style>

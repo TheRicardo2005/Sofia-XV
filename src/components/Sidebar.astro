@@ -1,0 +1,35 @@
+<!-- Botón SIEMPRE visible, fuera del sidebar -->
+<button
+  id="toggleBtn"
+  class="fixed top-4 left-4 bg-gray-700 text-white rounded-md p-2 z-50"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round" class="icon">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M4 6l16 0" />
+    <path d="M4 12l16 0" />
+    <path d="M4 18l16 0" />
+  </svg>
+</button>
+
+<!-- Sidebar -->
+<aside
+  id="sidebar"
+  class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full transition-transform duration-300 z-40"
+>
+  <nav class="flex flex-col p-4 pt-20 space-y-2">
+    <a href="#" class="hover:bg-gray-700 p-2 rounded">Inicio</a>
+    <a href="#" class="hover:bg-gray-700 p-2 rounded">Servicios</a>
+    <a href="#" class="hover:bg-gray-700 p-2 rounded">Contacto</a>
+  </nav>
+</aside>
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+  const toggleBtn = document.getElementById("toggleBtn");
+
+  toggleBtn?.addEventListener("click", () => {
+    sidebar?.classList.toggle("-translate-x-full");
+  });
+</script>

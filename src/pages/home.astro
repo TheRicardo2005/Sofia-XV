@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import fondoSofia from "@/assets/img/sofia.webp";
+import logoSofia from "@/assets/img/logo-sofia.png";
+---
+
+<Layout>
+	<section id="logo-mask" class="fixed top-0 w-full h-screen">
+		<!-- Fondo -->
+		<section id="hero-key" class="absolute inset-0 w-full h-full scale-125">
+			<Image
+				src={fondoSofia}
+				alt="Fondo"
+				class="w-full h-full object-cover"
+			/>
+			<Image
+				src={logoSofia}
+				alt="Logo"
+				id="hero-key-logo"
+				class="absolute inset-0 m-auto w-1/2 object-contain opacity-0"
+			/>
+		</section>
+
+		<!-- Texto -->
+		<div
+			class="relative z-10 flex flex-col items-center justify-center h-full text-white opacity-0"
+			id="hero-text"
+		>
+			<h1
+				id="hero-title"
+				class="text-5xl md:text-7xl font-bold text-center drop-shadow-lg"
+			>
+				Los 15 de Sofía
+			</h1>
+			<p
+				id="hero-subtitle"
+				class="text-xl md:text-2xl mt-4 drop-shadow text-center"
+			>
+				Una noche que nunca olvidarás
+			</p>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	#logo-mask {
+		background: #fff;
+		mask-image: url("../assets/svg/MisXV.svg");
+		mask-repeat: no-repeat;
+		mask-size: 120000%;
+		mask-position: center;
+	}
+</style>
