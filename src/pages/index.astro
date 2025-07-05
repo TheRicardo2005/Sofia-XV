@@ -28,11 +28,11 @@ import Counter from "@/components/Counter.astro";
     #HeroBannerHome {
         background-image: url("/img/bannerescritorio.webp");
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover 100%;
         background-position: center;
         width: 100%;
         position: relative;
-        aspect-ratio: 16/9;
+        aspect-ratio: 1/2;
     }
 
     /* #HeroBannerHome .overlay {
@@ -59,16 +59,17 @@ import Counter from "@/components/Counter.astro";
             background-position: center center;
         }
     } */
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media (min-width: 567px) and (max-width: 767px) {
         #HeroBannerHome {
             /* background-image: url("/img/banner.webp"); */
             background-position: center center;
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 566px) {
         /* Estilos para smartphones pequeños */
         #HeroBannerHome {
+            background-size: cover;
             background-image: url("/img/banner.webp");
         }
     }
