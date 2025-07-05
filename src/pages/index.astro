@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import ConfirmAsistencia from "@/components/ConfirmAsistencia.astro";
 import BannerInfor from "../../public/img/bannerInfo.webp"
 import regalo from "../../public/img/regalo.webp"
+import Carrusel from "@/components/Carrusel.astro";
 ---
 
 <Layout>
@@ -33,9 +34,11 @@ import regalo from "../../public/img/regalo.webp"
         <!-- WhatsApp -->
         <ConfirmAsistencia />
 
-        <div class="h-min-[522px] bg-[#c6a8f4] flex justify-center items-center">
+        <div class="h-min-[522px] bg-[#c6a8f4] flex justify-center items-center" id="gift">
             <Image src={regalo} alt="Banner de Regalos" />
         </div>
+
+        <Carrusel/>
     </main>
 </Layout>
 

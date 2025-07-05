@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import Galeria from "@/assets/svg/Galeria.svg"
+import Galeriainf from "@/assets/svg/Galeriainf.svg"
+---
+
+<section class="bg-[#c6a8f4] p-6 text-center" id="galeria">
+    <Galeria class={"w-[24rem] m-auto"} />
+    <p class="font-bold text-2xl mb-10">¡Mi sesión de fotos!</p>
+    <div class="relative w-xs mx-auto">
+        <button
+            aria-label="Anterior"
+            id="btnPrev"
+            class="absolute -left-12 top-1/2 transform -translate-y-1/2 bg-[#422c59] rounded-full p-2"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left text-white"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M15 6l-6 6l6 6"></path></svg
+            >
+        </button>
+        <img
+            id="carousel-image"
+            src=""
+            alt="Foto de sesión"
+            class="rounded-lg mx-auto"
+            style="aspect-ratio: 3 / 5; object-fit: cover;"
+        />
+        <button
+            aria-label="Siguiente"
+            id="btnNext"
+            class="absolute -right-12 top-1/2 transform -translate-y-1/2 bg-[#422c59] rounded-full p-2"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right text-white"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M9 6l6 6l-6 6"></path></svg
+            >
+        </button>
+    </div>
+    <Galeriainf class={"mt-4"}/>
+</section>
+
+<script>
+    const btnPrev = document.getElementById(
+        "btnPrev",
+    ) as HTMLButtonElement | null;
+    const btnNext = document.getElementById(
+        "btnNext",
+    ) as HTMLButtonElement | null;
+
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+
+    if (btnPrev) {
+        btnPrev.addEventListener("click", () => {
+            prevImage();
+        });
+    }
+    if (btnNext) {
+        btnNext.addEventListener("click", () => {
+            nextImage();
+        });
+    }
+    const images = [
+        "../../public/img/Carrusel1.jpg",
+        "../../public/img/Carrusel2.jpg",
+        "../../public/img/Carrusel3.jpg",
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index: number) {
+        if (index < 0 || index >= images.length) return;
+
+        const imgElement = document.getElementById(
+            "carousel-image",
+        ) as HTMLImageElement | null;
+        if (!imgElement) return;
+        currentIndex = index;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
+        imgElement.src = images[currentIndex];
+    }
+
+    showImage(currentIndex);
+</script>
